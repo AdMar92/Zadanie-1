@@ -1,21 +1,24 @@
-// Pobieranie wszystkich elementów li.item
-const categories = document.querySelectorAll('#categories .item');
+  // Pobranie wszystkich elementów li.item
+  const categories = document.querySelectorAll('#categories .item');
 
-// Liczenie liczby kategorii
-const numberOfCategories = categories.length;
+  // Licznik kategorii
+  let categoryCount = 0;
 
-// Wypisywanie liczby kategorii w konsoli
-console.log('Number of categories:', numberOfCategories);
+  // Iteracja przez każdą kategorię
+  categories.forEach(category => {
+    // Inkrementacja licznika kategorii
+    categoryCount++;
 
-// Iteracja przez każdą kategorię
-categories.forEach(category => {
-  // Pobieranie nagłówka kategorii
-  const categoryName = category.querySelector('h2').textContent;
+    // Pobranie nagłówka kategorii
+    const categoryName = category.querySelector('h2').textContent;
 
-  // Pobieranie liczby elementów w kategorii
-  const categoryElements = category.querySelectorAll('ul li').length;
+    // Pobranie liczby elementów w kategorii
+    const elementsCount = category.querySelectorAll('ul li').length;
 
-  // Wypisywanie nazwy kategorii i liczby elementów w konsoli
-  console.log('Category:', categoryName);
-  console.log('Elements:', categoryElements);
-});
+    // Wyświetlenie nazwy kategorii i liczby elementów w konsoli
+    console.log(`Category: ${categoryName}`);
+    console.log(`Elements: ${elementsCount}`);
+  });
+
+  // Wyświetlenie liczby kategorii w konsoli
+  console.log(`Number of categories: ${categoryCount}`);
